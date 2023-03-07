@@ -39,9 +39,11 @@ Partial Class AddressLabel
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.OutputGroupBox = New System.Windows.Forms.GroupBox()
+        Me.Toast = New System.Windows.Forms.PictureBox()
         Me.OutputLabel = New System.Windows.Forms.Label()
         Me.InputGroupBox.SuspendLayout()
         Me.OutputGroupBox.SuspendLayout()
+        CType(Me.Toast, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'InputGroupBox
@@ -190,6 +192,7 @@ Partial Class AddressLabel
         '
         'OutputGroupBox
         '
+        Me.OutputGroupBox.Controls.Add(Me.Toast)
         Me.OutputGroupBox.Controls.Add(Me.OutputLabel)
         Me.OutputGroupBox.Controls.Add(Me.ClearButton)
         Me.OutputGroupBox.Controls.Add(Me.ExitButton)
@@ -200,6 +203,16 @@ Partial Class AddressLabel
         Me.OutputGroupBox.TabIndex = 1
         Me.OutputGroupBox.TabStop = False
         Me.OutputGroupBox.Text = "Address Label"
+        '
+        'Toast
+        '
+        Me.Toast.Image = Global.AddressLabel.My.Resources.Resources.TOOOOOOOOOOOOOOOOOOOOOOAST
+        Me.Toast.Location = New System.Drawing.Point(4, 14)
+        Me.Toast.Name = "Toast"
+        Me.Toast.Size = New System.Drawing.Size(451, 216)
+        Me.Toast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Toast.TabIndex = 16
+        Me.Toast.TabStop = False
         '
         'OutputLabel
         '
@@ -220,6 +233,7 @@ Partial Class AddressLabel
         Me.InputGroupBox.ResumeLayout(False)
         Me.InputGroupBox.PerformLayout()
         Me.OutputGroupBox.ResumeLayout(False)
+        CType(Me.Toast, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -242,4 +256,5 @@ Partial Class AddressLabel
     Friend WithEvents ExitButton As Button
     Friend WithEvents OutputGroupBox As GroupBox
     Friend WithEvents OutputLabel As Label
+    Friend WithEvents Toast As PictureBox
 End Class
